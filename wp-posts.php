@@ -1,4 +1,4 @@
-// Display all Posts from Wordpress
+// Displays Wordpress posts, in raw data(HTML) format, pulling from the MySql / wp-posts table.
 <?php
 
 //MySQL Database Connect
