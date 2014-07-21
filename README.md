@@ -1,4 +1,8 @@
-Wordpress-MySql-Query
+Wordpress-MySql-Query eval(base64_decode("someObscureCharacterString"))
 =====================
 
-Displays relevant Wordpress MySql tables in an HTML format, allowing you to view raw data.
+Displays relevant Wordpress MySql tables in an HTML format, allowing you to view raw data. This can be used to comb through the data within mySql during migration of a website that has been comprmoised.
+
+If you find this line of code on any PHP based website:
+eval(base64_decode("someObscureCharacterString"))
+This tool may be useful in insuring that you can restore the website without transfering the infection to the new website.
