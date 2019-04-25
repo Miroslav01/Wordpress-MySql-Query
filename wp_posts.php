@@ -4,28 +4,23 @@
 //MySQL Database Connect
 include 'dataconnect.php';
 
-// Pull from tables
-$usertable="wp_posts";
-$yourfield = "post_title";
+$wp_posts = "wp_eaheph_posts";
 
-mysql_connect($hostname,$username, $password) or die ("<html><script language='JavaScript'>alert('Unable to connect to database! Please try again later.'),history.go(-1)</script></html>");
-mysql_select_db($dbname);
+$sql = "SELECT * FROM " . $wp_posts;
+$result = $conn->query($sql);
 
-# Check If Record Exists
-
-$query = "SELECT * FROM wp_posts";
-
-$result = mysql_query($query);
-
-if($result)
-{
-while($row = mysql_fetch_array($result))
-{
-$name = $row["post_content"];
-echo "Name: ".$name."<br><br>";
-}
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<h1>" . $row["post_title"] . "</h1> <p>". $row["post_content"] . "</p><br><hr><br>";
+    }
+} else {
+    echo "0 results";
 }
 
-
+$conn->close();
 
 ?>
+
+
+
